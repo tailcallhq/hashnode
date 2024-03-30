@@ -5,7 +5,8 @@ seoDescription: "Explore the unique advantages of GraphQL in overcoming the impe
 datePublished: Sat Mar 30 2024 09:07:19 GMT+0000 (Coordinated Universal Time)
 cuid: cludvcr7s000608l96si3amjl
 slug: graphqls-unique-value-proposition
-ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1711783376186/58522c87-12ac-4199-a6da-e06c1f1b28f5.webp
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1711793347659/912aafc8-a240-4ff2-8289-b80003f4a327.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1711793374994/581c5c85-8750-40c4-9da5-4c5ac320b8a2.png
 tags: graphql, rest-api, grpc
 
 ---
