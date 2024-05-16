@@ -1,5 +1,5 @@
 ---
-title: "GraphQL vs REST vs gRPC and unfair comparison"
+title: "GraphQL vs REST vs gRPC - an unfair comparison"
 seoTitle: "How GraphQL Solves Impedance Mismatch and Boost Developer Productivity"
 seoDescription: "Explore the unique advantages of GraphQL in overcoming the impedance mismatch between actual and ideal APIs, enhancing software development efficiency."
 datePublished: Sat Mar 30 2024 09:07:19 GMT+0000 (Coordinated Universal Time)
