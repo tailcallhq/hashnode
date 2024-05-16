@@ -1,10 +1,10 @@
 ---
-title: "GraphQL's unique value proposition"
+title: "GraphQL vs REST vs gRPC and unfair comparison"
 seoTitle: "How GraphQL Solves Impedance Mismatch and Boost Developer Productivity"
 seoDescription: "Explore the unique advantages of GraphQL in overcoming the impedance mismatch between actual and ideal APIs, enhancing software development efficiency."
 datePublished: Sat Mar 30 2024 09:07:19 GMT+0000 (Coordinated Universal Time)
 cuid: cludvcr7s000608l96si3amjl
-slug: graphqls-unique-value-proposition
+slug: graphql-ve-rest-vs-grpc
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1711793347659/912aafc8-a240-4ff2-8289-b80003f4a327.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1711793374994/581c5c85-8750-40c4-9da5-4c5ac320b8a2.png
 tags: graphql, rest-api, grpc
