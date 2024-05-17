@@ -31,4 +31,6 @@ Comparing GraphQL with REST or gRPC on this front might not do justice to their 
 
 Beyond the technical resolution of impedance mismatch, GraphQL addresses a critical business problem: the inefficiency in software development that arises from this gap between actual and ideal APIs. This inefficiency leads to developers spending excessive time on API orchestration—time that could be better spent on core application development. They find themselves constantly writing, revising, and optimizing APIs and their orchestration, as well as managing the fallout from breaking changes. By leveraging GraphQL, developers can significantly reduce these frictions, streamlining the development process and enhancing productivity. In essence, GraphQL not only solves a technical problem but also delivers substantial business value by enabling more efficient and flexible software development practices.
 
+GraphQL offers an excellent developer experience for API consumption with its intuitive query language that allows for retrieving deeply nested data independently of the upstream source. However, it does have some limitations. At [Tailcall](https://tailcall.run), we are dedicated to making GraphQL more accessible and easier to work with.
+
 If you like what you just read, please do subscribe and share on twitter and linkedin 🙏
