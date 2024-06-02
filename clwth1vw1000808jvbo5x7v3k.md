@@ -21,7 +21,9 @@ Manually implementing batching mechanisms and data loaders can be incredibly ted
 
 Secondly, traditional caching doesn't work with GraphQL, so you have to resort to all sorts of solutions, using persisted queries or some vendor-specific implementation of caching. Implementing effective caching strategies is essential for performance but it's tricky. Developers must decide what to cache, when to invalidate the cache, and how to manage cache consistency, which adds another layer of complexity.
 
-The N+1 issue, boy, that's perhaps everyone's favorite issue with GraphQL. It arises when executing multiple queries that could have been combined into one, leading to massive performance degradation. Detecting and solving this requires meticulous analysis of query patterns and database access, which requires developers to have the context of the whole query at once, generate a query plan, translate it to appropriate upstream calls, and then execute! That's a lot of complex engineering effort; building a general-purpose query engine is not for the faint-hearted, and in the midst of all this complex yet interesting work, I need to ship features!
+The N+1 issue, boy, that's perhaps everyone's favorite issue with GraphQL. It arises when executing multiple upstream requests that could have been combined into one, leading to massive performance degradation. Detecting and solving this requires meticulous analysis of query patterns and database access, which requires developers to have the context of the whole query at once, generate a query plan, translate it to appropriate upstream calls, and then execute! That's a lot of complex engineering effort; building a general-purpose query engine is not for the faint-hearted, and in the midst of all this complex yet interesting work, I need to ship features!
+
+> [Grafast](https://grafast.org/grafast) is an upcoming generalized query planner that could make query-planning in JS a bit more tamed.
 
 GraphQL’s flexibility can be a double-edged sword when it comes to security, necessitating robust mechanisms for authentication and authorization. Like caching, traditional route-based API access doesn't work with GraphQL. Implementing these security layers correctly involves ensuring that only authenticated users can access the GraphQL entity and that they can only access data or fields that they are authorized to see. This requires fine-grained control and often custom logic and the invention of a new standard that works just for you.
 
@@ -36,6 +38,8 @@ GraphQL, much like SQL, is a query language designed to allow clients to request
 ## The future of GraphQL
 
 The future of GraphQL development is moving towards generalized automated solutions built on modern, low-level system stacks like Rust and Zig, and moving away from the prevalent hand-written Node.js-based solutions of today.
+
+[![Most common GraphQL implementations](https://cdn.hashnode.com/res/hashnode/image/upload/v1717318687606/7bddbf4b-ef1c-4cac-8605-b4acf79a0eef.png align="center")](https://hygraph.com/graphql-survey-2024#how-developers-build-graphql-apis)
 
 * These engines will connect to data sources of any type and build a GraphQL endpoint on top of them. They will find connections between other data sources, sometimes completely automatically and sometimes using hints given by the developer, creating a unified GraphQL experience.
     
