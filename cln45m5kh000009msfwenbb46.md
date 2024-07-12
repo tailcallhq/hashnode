@@ -5,36 +5,42 @@ seoDescription: ""GraphQLConf 2023: Dive into top talks, workshops, and GraphQL 
 datePublished: Fri Sep 29 2023 05:18:56 GMT+0000 (Coordinated Universal Time)
 cuid: cln45m5kh000009msfwenbb46
 slug: graphql-conf-2023
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1695963331194/6149b22f-ade6-4494-aa5a-4076a4b1d5f0.jpeg
+canonical: https://tailcall.hashnode.dev/graphql-conf-2023
+cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static//images/blog/graphql-conf-2023.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1695964719004/d92bc963-cef8-4354-947d-7d926a7bcb4d.jpeg
-tags: graphql, tech-conference, apollo-federation
 
 ---
 
+
+![A Photo from GraphQL Conf 2023](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/graphql-conf-2023.png)
 GraphQLConf 2023 wasn't just another tech conference; it was a groundbreaking event hosted by the GraphQL Foundation. Bursting with riveting workshops, enlightening talks, and interactive sponsor booths, this conference was a deep dive into the ever-evolving world of GraphQL.
 
+<!-- truncate -->
+<head>
+<link rel="canonical" href="https://tailcall.hashnode.dev/graphql-conf-2023"/>
+<title>GraphQL Conf 2023</title>
+</head>
 Gone are the days when GraphQL was just for UI developers. This year's theme revolved around the long-term vision of GraphQL and its seamless integration into backend architecture. It was all about the bigger picture!
 
 ### **Workshops & Talks Highlights**
 
-* **Is GraphQL BFF Necessary:** An electrifying discussion led by Tanmay from Hasura, as he unravels the significance of the BFF layer in the era after ReactJS. One profound takeaway?
-    
-    > *GraphQL isn't just a fleeting tactic for instant gains—it's a visionary strategy that propels businesses toward unparalleled success!*
-    
-* **Interactive GraphQL with Envoy & Kubernetes**: The team from solo.io showcased the magic of adding GraphQL to an envoy gateway. It's all about giving clients more power while retaining essential gateway features.
-    
-* **The Future of Efficiency**: Benjie Gillam's talk was a rollercoaster! He introduced grafast, a new GraphQL execution engine that optimizes data loading through query planning. One to watch!
-    
-* **Rethinking Rate Limiting**: Meenakshi Dhanani from Postman took us on a journey through the intricacies of rate-limiting GraphQL queries. Traditional methods? Not so effective. Enter query cost analysis!
-    
-* **GraphQL Fusion Unveiled**: Michael Staib from ChilliCream introduced GraphQL Fusion, a revolutionary approach to building distributed GraphQL APIs. The future of federating GraphQL APIs is looking bright!
-    
-* **The Null Saga**: Stephen Spalding from Netflix delved into the history of 'null' and introduced the Client Controlled Nullability proposal. A game-changer for GraphQL clients, we are definitely looking forward to this one!
-    
-* **The Right Size for GraphQL**: Theo Browne's presentation was an eye-opener. He introduced us to scenarios where tRPC might be a better fit than GraphQL.
-    
-* **Data Load 3.0:** Jens from Wundergraph talked about the massive performance gains one could potentially get by using a BFS algorithm in data loaders.
-    
+- **Is GraphQL BFF Necessary:** An electrifying discussion led by Tanmay from Hasura, as he unravels the significance of the BFF layer in the era after ReactJS. One profound takeaway?
+
+  > _GraphQL isn't just a fleeting tactic for instant gains—it's a visionary strategy that propels businesses toward unparalleled success!_
+
+- **Interactive GraphQL with Envoy & Kubernetes**: The team from solo.io showcased the magic of adding GraphQL to an envoy gateway. It's all about giving clients more power while retaining essential gateway features.
+
+- **The Future of Efficiency**: Benjie Gillam's talk was a rollercoaster! He introduced grafast, a new GraphQL execution engine that optimizes data loading through query planning. One to watch!
+
+- **Rethinking Rate Limiting**: Meenakshi Dhanani from Postman took us on a journey through the intricacies of rate-limiting GraphQL queries. Traditional methods? Not so effective. Enter query cost analysis!
+
+- **GraphQL Fusion Unveiled**: Michael Staib from ChilliCream introduced GraphQL Fusion, a revolutionary approach to building distributed GraphQL APIs. The future of federating GraphQL APIs is looking bright!
+
+- **The Null Saga**: Stephen Spalding from Netflix delved into the history of 'null' and introduced the Client Controlled Nullability proposal. A game-changer for GraphQL clients, we are definitely looking forward to this one!
+
+- **The Right Size for GraphQL**: Theo Browne's presentation was an eye-opener. He introduced us to scenarios where tRPC might be a better fit than GraphQL.
+
+- **Data Load 3.0:** Jens from Wundergraph talked about the massive performance gains one could potentially get by using a BFS algorithm in data loaders.
 
 ### **Unconference Session: Where Everyone's a Speaker!**
 
