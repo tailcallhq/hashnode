@@ -4,20 +4,22 @@ seoTitle: "Pitfalls of GraphQL Federation"
 datePublished: Mon Jun 19 2023 01:42:11 GMT+0000 (Coordinated Universal Time)
 cuid: clj26yj7b00050al859eubulk
 slug: unraveling-the-challenges-of-bff-federation
+canonical: https://tailcall.hashnode.dev/unraveling-the-challenges-of-bff-federation
 cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static//images/blog/bff-cover.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1687138451126/71c2f09d-d39d-44b5-8377-0587cc910932.png
 
 ---
 
 
-<head>
-<link rel="canonical" href="https://tailcall.hashnode.dev/unraveling-the-challenges-of-bff-federation"/>
-<title>Unraveling the Challenges of BFF Federation</title>
-</head>
 ![Cover Image for Unraveling the Challenges of BFF Federation](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-cover.png)
 In our [previous](https://blog.tailcall.run/no-one-talks-about-api-orchestration) blog post, we discussed the challenges of API Orchestration and its often overlooked role in a microservices architecture. We explored how, while it serves as an abstraction for frontend apps and websites, this abstraction's performance is very sensitive to network latency and device performance thus directly impacting end-user experience. One proposed solution was to create a Backend for Frontend (BFF) layer, essentially moving the frontend abstraction to powerful servers within your VPC. Although this approach effectively addresses the user experience problem and simplifies the work of front-end engineers, it introduces a new set of challenges for the backend, leading to difficulties in scaling the monolithic solution. Here's what the BFF architecture looked like:
 
 <!-- truncate -->
+
+<head>
+<link rel="canonical" href="https://tailcall.hashnode.dev/unraveling-the-challenges-of-bff-federation"/>
+<title>Unraveling the Challenges of BFF Federation</title>
+</head>
 
 ![Architecture Diagram for BFF](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-architecture.png)
 
