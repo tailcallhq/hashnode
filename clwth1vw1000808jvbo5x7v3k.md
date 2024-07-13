@@ -4,12 +4,21 @@ seoDescription: "the"
 datePublished: Thu May 30 2024 16:30:41 GMT+0000 (Coordinated Universal Time)
 cuid: clwth1vw1000808jvbo5x7v3k
 slug: writing-a-graphql-backend-by-hand-is-long-gone
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1717081618319/a5c0d309-8e72-4703-b2ae-de5c743c775e.png
-tags: javascript, nodejs, graphql
+canonical: https://tailcall.hashnode.dev/writing-a-graphql-backend-by-hand-is-long-gone
+cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static//images/blog/no-code-cover.png
 
 ---
 
+
+![Cover Image for Writing a GraphQL Backend by Hand is Long Gone](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/no-code-cover.png)
 Building a GraphQL backend by hand might seem like a noble pursuit, but the landscape of API development is evolving rapidly, and so are the challenges that come with it. Today, the process is often fraught with complexity, performance bottlenecks, security vulnerabilities, and reliability issues. Yet again, we had a developer expressing [frustration](https://bessey.dev/blog/2024/05/24/why-im-over-graphql/) about the issues with GraphQL and the reasons for leaving our mighty ship. I wish to dive deeper into these challenges and explore why the future points towards automated, high-performance solutions.
+
+<!-- truncate -->
+
+<head>
+<link rel="canonical" href="https://tailcall.hashnode.dev/writing-a-graphql-backend-by-hand-is-long-gone"/>
+<title>Writing a GraphQL Backend by Hand is Long Gone</title>
+</head>
 
 ## Complexity with GraphQL
 
@@ -31,7 +40,7 @@ Lastly, but most importantly, ensuring your GraphQL API is reliable means tackli
 
 ## GraphQL is more like SQL and less like REST
 
-We talked about it in our [previous](https://blog.tailcall.run/graphql-vs-rest-vs-grpc) blog why GraphQL isn't like REST or gRPC. I would argue that SQL is a closer elder sibling of GraphQL than REST or gRPC. Writing a GraphQL backend can be likened to building an SQL engine manually. Imagine if every time you wanted to interact with a database, you had to write the SQL engine from scratch. Every time you made a database change, you would need to rewrite your engine so that it can work with the new schema or indexes. It’s inefficient and impractical; no one does that. Fortunately, modern databases come with embedded, high-performance SQL engines such as [Apache Calcite](https://calcite.apache.org/) that adhere to the SQL specification but abstract away the complexities around building it. These databases allow developers to focus on writing queries and managing data without worrying about the underlying mechanics, thanks to their sophisticated query engines.
+We talked about it in our [previous](graphql-vs-rest-vs-grpc-2024-03-30.md) blog why GraphQL isn't like REST or gRPC. I would argue that SQL is a closer elder sibling of GraphQL than REST or gRPC. Writing a GraphQL backend can be likened to building an SQL engine manually. Imagine if every time you wanted to interact with a database, you had to write the SQL engine from scratch. Every time you made a database change, you would need to rewrite your engine so that it can work with the new schema or indexes. It’s inefficient and impractical; no one does that. Fortunately, modern databases come with embedded, high-performance SQL engines such as [Apache Calcite](https://calcite.apache.org/) that adhere to the SQL specification but abstract away the complexities around building it. These databases allow developers to focus on writing queries and managing data without worrying about the underlying mechanics, thanks to their sophisticated query engines.
 
 GraphQL, much like SQL, is a query language designed to allow clients to request exactly the data they need. Unlike REST, which relies on fixed endpoints, or gRPC, which focuses on remote procedure calls, GraphQL provides a flexible, hierarchical way to fetch and manipulate data, making it a closer analog to SQL in terms of expressiveness and precision. And I believe the future of GraphQL is going to be like the journey of this elder sibling.
 
@@ -39,14 +48,13 @@ GraphQL, much like SQL, is a query language designed to allow clients to request
 
 The future of GraphQL development is moving towards generalized automated solutions built on modern, low-level system stacks like Rust and Zig, and moving away from the prevalent hand-written Node.js-based solutions of today.
 
-[![Most common GraphQL implementations](https://cdn.hashnode.com/res/hashnode/image/upload/v1717318687606/7bddbf4b-ef1c-4cac-8605-b4acf79a0eef.png align="center")](https://hygraph.com/graphql-survey-2024#how-developers-build-graphql-apis)
+[![Most common GraphQL implementations](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/graphql-stack.png)](https://hygraph.com/graphql-survey-2024#how-developers-build-graphql-apis)
 
-* These engines will connect to data sources of any type and build a GraphQL endpoint on top of them. They will find connections between other data sources, sometimes completely automatically and sometimes using hints given by the developer, creating a unified GraphQL experience.
-    
-* Similar to SQL engines, which use JIT techniques to identify performance optimizations at runtime, GraphQL engines will become extremely smart about performance. My hope is that GraphQL will eventually move away from its dependency on the JSON protocol, into something more efficient such as protobuf.
-    
-* There is definitely going to be a lot of work put into the standardization of the loose ends. GraphQL engines will eventually converge on error handling and error propagation strategies. GraphQL on HTTP is the first step in that direction. Authentication and Authorization too will very quickly become standard features of GraphQL, so you won't need to worry about inventing a new way of authentication. This will all be packed into a GraphQL standard. This might be a stretch, but if the standards team gets together, I think even GraphQL caching will be consistent across all GraphQL engines, and you will be able to switch from one caching solution to another without locking into a vendor-specific implementation.
-    
+- These engines will connect to data sources of any type and build a GraphQL endpoint on top of them. They will find connections between other data sources, sometimes completely automatically and sometimes using hints given by the developer, creating a unified GraphQL experience.
+
+- Similar to SQL engines, which use JIT techniques to identify performance optimizations at runtime, GraphQL engines will become extremely smart about performance. My hope is that GraphQL will eventually move away from its dependency on the JSON protocol, into something more efficient such as protobuf.
+
+- There is definitely going to be a lot of work put into the standardization of the loose ends. GraphQL engines will eventually converge on error handling and error propagation strategies. GraphQL on HTTP is the first step in that direction. Authentication and Authorization too will very quickly become standard features of GraphQL, so you won't need to worry about inventing a new way of authentication. This will all be packed into a GraphQL standard. This might be a stretch, but if the standards team gets together, I think even GraphQL caching will be consistent across all GraphQL engines, and you will be able to switch from one caching solution to another without locking into a vendor-specific implementation.
 
 You might have already seen a wave of open-source solutions that build GraphQL on top of existing data sources. One such solution paving the way is [Tailcall](https://tailcall.run). Tailcall’s platform is designed to automate the creation, validation, and optimization of GraphQL backends. Sticking to standards and ensuring developers don't ever have to pay the heavy tax of using GraphQL that they do today, do check it out!
 
