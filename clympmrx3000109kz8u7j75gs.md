@@ -5,12 +5,10 @@ seoDescription: "Learn how to design a robust, scalable GraphQL schema. Best pra
 datePublished: Wed Jul 10 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: clympmrx3000109kz8u7j75gs
 slug: graphql-schema
-cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static//images/graphql/graphql-schema-structure.png
+canonical: https://tailcall.run/blog/graphql-schema/
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1721737137028/bbd8f711-3f1e-4141-9061-517234751231.png
 
 ---
-
-
-![GraphQL Schema Structure](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/graphql/graphql-schema-structure.png)
 
 Designing a robust, scalable GraphQL schema is critical for building production-ready APIs that can evolve with your application's needs. In this comprehensive guide, we'll walk through the process of crafting a GraphQL schema for a real-world application, highlighting best practices and considerations along the way.
 
@@ -18,13 +16,9 @@ If you are thinking how we could possibly cover all of the lovely intricacies as
 
 Let's break our job into puzzle pieces. Let's start by simply creating designing a brand new schema!
 
-<!-- truncate -->
+![]( align="center")
 
-<div style={{textAlign: 'center', margin:'16px'}}>
-
-<img src="/images/blog/puzzle-graphql-schema-1.png" alt="puzzle piece to visualise the series" style={{maxWidth: '40%'}} />
-
-</div>
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1721737179725/ab987d49-4a48-402b-8591-74a45d82b27a.png align="center")
 
 If you're new to GraphQL Schema, check out our [GraphQL Schema Tutorial](https://tailcall.run/graphql/schemas-and-types/) to get up to speed with the basics.
 
@@ -32,10 +26,14 @@ If you're new to GraphQL Schema, check out our [GraphQL Schema Tutorial](https:/
 
 A well-designed GraphQL schema serves as the blueprint for your entire API. It defines:
 
-- The types of data available
-- The relationships between those types
-- The operations clients can perform (queries, mutations, subscriptions)
-- The structure of requests and responses
+* The types of data available
+    
+* The relationships between those types
+    
+* The operations clients can perform (queries, mutations, subscriptions)
+    
+* The structure of requests and responses
+    
 
 Your schema acts as a contract between your backend and frontend teams. Once published, clients can rely on its structure, enabling them to build UIs with confidence. A thoughtful schema design upfront can save significant refactoring down the road.
 
@@ -43,9 +41,12 @@ Your schema acts as a contract between your backend and frontend teams. Once pub
 
 To illustrate schema design principles, let's imagine we're building TechTalent - a platform connecting tech companies with job seekers. Our application will allow:
 
-- Companies to post job listings
-- Candidates to create profiles and apply to jobs
-- Recruiters to search candidates and manage applications
+* Companies to post job listings
+    
+* Candidates to create profiles and apply to jobs
+    
+* Recruiters to search candidates and manage applications
+    
 
 We'll design our schema step-by-step to support these core features.
 
@@ -53,11 +54,16 @@ We'll design our schema step-by-step to support these core features.
 
 The first step is to identify the main entities in our domain. For TechTalent, our core types might include:
 
-- Company
-- JobListing
-- Candidate
-- Application
-- Recruiter
+* Company
+    
+* JobListing
+    
+* Candidate
+    
+* Application
+    
+* Recruiter
+    
 
 Let's start by defining these as object types in our schema:
 
@@ -150,11 +156,16 @@ enum ApplicationStatus {
 
 We've now established the core relationships:
 
-- Companies have job listings and recruiters
-- Job listings belong to a company and have applications
-- Candidates have applications
-- Applications link a candidate to a job listing
-- Recruiters belong to a company
+* Companies have job listings and recruiters
+    
+* Job listings belong to a company and have applications
+    
+* Candidates have applications
+    
+* Applications link a candidate to a job listing
+    
+* Recruiters belong to a company
+    
 
 Note the use of the `ApplicationStatus` enum to represent the fixed set of possible statuses.
 
@@ -238,13 +249,18 @@ type Mutation {
 Notice the pattern we're using for mutations:
 
 1. Each mutation has a corresponding input type
+    
 2. Each mutation returns a payload type
+    
 
 This structure offers several benefits:
 
-- Input types allow for easy addition of new fields in the future
-- Payload types can include both the modified entity and any errors or metadata
-- It provides a consistent structure across all mutations
+* Input types allow for easy addition of new fields in the future
+    
+* Payload types can include both the modified entity and any errors or metadata
+    
+* It provides a consistent structure across all mutations
+    
 
 Let's look at an example input and payload type:
 
@@ -443,7 +459,7 @@ Good documentation helps both your team and API consumers understand the purpose
 
 To better understand the relationships in our schema, let's visualize the core types:
 
-![Diagram Illustrating Relationships between various types ](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-relationships.png)
+![Diagram Illustrating Relationships between various types ](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-relationships.png align="left")
 
 This diagram illustrates the key relationships between our main entities, helping us ensure our schema accurately represents our domain.
 
@@ -454,24 +470,25 @@ To visualize your schema, you can use tools like [GraphQL Voyager](https://graph
 As we've designed our schema, we've touched on several best practices. Let's recap some key points and add a few more considerations:
 
 1. **Start with the UI in mind**: Design your schema based on how the data will be used in your UI, not just how it's stored in your database.
-
+    
 2. **Use clear, consistent naming**: Adopt a naming convention (e.g., PascalCase for types, camelCase for fields) and stick to it.
-
+    
 3. **Leverage GraphQL features**: Make use of enums, interfaces, and unions to create a rich, expressive schema.
-
+    
 4. **Plan for change**: Use input types for mutations and consider versioning strategies for evolving your schema over time.
-
+    
 5. **Optimize for performance**: Be mindful of N+1 query problems and consider implementing DataLoader or similar batching mechanisms.
-
+    
 6. **Secure your schema**: Implement proper authentication and authorization. Consider using directives for field-level permissions.
-
+    
 7. **Validate input**: Use non-nullable fields and custom scalars to enforce data integrity at the schema level.
-
+    
 8. **Provide meaningful errors**: Return detailed error information in your mutation payloads to help clients handle failures gracefully.
-
+    
 9. **Monitor and analyze**: Implement logging and monitoring to understand how your schema is being used and where optimizations can be made.
-
+    
 10. **Keep it DRY**: Use interfaces and abstract types to reduce duplication in your schema.
+    
 
 ## Conclusion
 
@@ -485,6 +502,6 @@ By investing time in thoughtful schema design upfront, you'll create a solid fou
 
 Alright greatttt! You have successfully completed the first part of a very intricate series!! Pat yourslef and maybe high five your cat! Here are the links to the next blogs in the series that have already been published.
 
-![cat giving high five](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/cat-high-five-gif.webp)
+![cat giving high five](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/cat-high-five-gif.webp align="left")
 
-- [Next Part](/blog/graphql-schema-part-2-1)
+* [Next Part](/blog/graphql-schema-part-2-1)
