@@ -8,9 +8,17 @@ cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop
 
 ---
 
+
+![Cover Image for The truth about scaling Automatic Persisted Queries](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/apq-cover.png)
+
 Persisted queries are often hailed as a solution to several challenges in GraphQL related to network performance, caching, and maintenance. However, they may not always be the silver bullet they appear to be. This post delves into the concept of persisted queries (PQ) and automatic persisted queries (APQ), highlighting the limitations and potential scaling issues that accompany these technologies.
 
-\### The Problem
+<!-- truncate -->
+<head>
+<link rel="canonical" href="https://tailcall.hashnode.dev/the-truth-about-scaling-automatic-persisted-queries"/>
+<title>The truth about scaling Automatic Persisted Queries</title>
+</head>
+### The Problem
 
 #### Large Queries
 
@@ -50,26 +58,23 @@ Using the PQ link automatically sends short hashed queries as GET requests, enab
 
 ##### **Latency Reduction**
 
-* **No Parsing Overhead**: Since the query isn't sent to the server, the parsing stage, which can be computationally expensive, is eliminated. This saves valuable server processing time, directly reducing client latency.
-    
-* **Network Efficiency**: By transmitting only the hash instead of the full query, the request size is dramatically reduced, leading to faster network transmission and lower latency.
-    
+- **No Parsing Overhead**: Since the query isn't sent to the server, the parsing stage, which can be computationally expensive, is eliminated. This saves valuable server processing time, directly reducing client latency.
+
+- **Network Efficiency**: By transmitting only the hash instead of the full query, the request size is dramatically reduced, leading to faster network transmission and lower latency.
 
 ##### **Security Enhancements**
 
-* **Control Over Allowed Queries**: The server can start with a finite set of "allowed" queries, ensuring that unauthorized or unoptimized GraphQL requests cannot be made. This control is a significant safeguard for production environments, preventing potential abuse or inefficiencies.
-    
-* **Reduction in Attack Surface**: By limiting the queries to a pre-defined set, the risk of malicious queries is reduced, enhancing the security profile of the application.
-    
+- **Control Over Allowed Queries**: The server can start with a finite set of "allowed" queries, ensuring that unauthorized or unoptimized GraphQL requests cannot be made. This control is a significant safeguard for production environments, preventing potential abuse or inefficiencies.
+
+- **Reduction in Attack Surface**: By limiting the queries to a pre-defined set, the risk of malicious queries is reduced, enhancing the security profile of the application.
 
 #### Problem
 
 While PQs provide remarkable benefits, they are not without challenges:
 
-* **Schema Rigidity**: If you aim to keep the schema open and queries dynamic, supporting any possible query becomes complex.
-    
-* **Maintenance of Cached Queries**: Managing the cache of allowed queries and keeping them in sync with evolving client needs can become a maintenance burden, especially in a fast-changing environment.
-    
+- **Schema Rigidity**: If you aim to keep the schema open and queries dynamic, supporting any possible query becomes complex.
+
+- **Maintenance of Cached Queries**: Managing the cache of allowed queries and keeping them in sync with evolving client needs can become a maintenance burden, especially in a fast-changing environment.
 
 ### Automatic Persisted Queries (APQs)
 
@@ -82,24 +87,23 @@ APQs are a supposed improvement over PQs. In a PQ setup, the server runs with a 
 The APQ process is a two-step approach:
 
 1. **Hash Request**: The client sends a request with the hash of the query. If the server recognizes the hash, it returns the corresponding response:
-    
-    ```bash
-    curl -X GET -H "Content-Type: application/json" \
-      --data-urlencode 'extensions={"persistedQuery":{"version":1,"sha256Hash":"<SHA 256>"}}' \
-      http://your-graphql-server.com/graphql
-    ```
-    
+
+   ```bash
+   curl -X GET -H "Content-Type: application/json" \
+     --data-urlencode 'extensions={"persistedQuery":{"version":1,"sha256Hash":"<SHA 256>"}}' \
+     http://your-graphql-server.com/graphql
+   ```
+
 2. **Full Query Request**: If the server does not recognize the hash, it returns an error. The client then sends a new request that includes both the hash and the full query string:
-    
-    ```bash
-    curl --get http://localhost:4000/graphql \
-      --header 'content-type: application/json' \
-      --data-urlencode '{"query": "{ largeQuery { field1 field2 ... } }"}' \
-      --data-urlencode 'extensions={"persistedQuery":{"version":1,"sha256Hash":"<HASH>"}}'
-    ```
-    
-    The server parses the full query, caches it for future use, and returns the GraphQL response. Subsequent requests use the hash.
-    
+
+   ```bash
+   curl --get http://localhost:4000/graphql \
+     --header 'content-type: application/json' \
+     --data-urlencode '{"query": "{ largeQuery { field1 field2 ... } }"}' \
+     --data-urlencode 'extensions={"persistedQuery":{"version":1,"sha256Hash":"<HASH>"}}'
+   ```
+
+   The server parses the full query, caches it for future use, and returns the GraphQL response. Subsequent requests use the hash.
 
 This process optimizes network performance while allowing flexibility in the queries that can be run. You can read more about APQ [here](https://www.apollographql.com/docs/apollo-server/performance/apq/)
 
@@ -110,13 +114,12 @@ This process optimizes network performance while allowing flexibility in the que
 Consider a situation where a server has just been deployed or restarted, and the cache is empty. Now, multiple clients send hash requests for queries that are not yet cached.
 
 1. **Massive Error Responses**: Since the cache is empty, the server returns errors for all hash requests, signaling the clients to send the full query strings.
-    
+
 2. **Simultaneous Full Query Requests**: All clients now simultaneously send full query requests, causing a sudden surge in demand.
-    
+
 3. **Server Strain**: The server must parse and cache each unique query, placing significant strain on its resources. This can lead to increased latency and even server failure if the demand is too high.
-    
+
 4. **Repeated Pattern**: If the server struggles to cache the queries quickly enough, the clients may continue to receive errors and retry the full query requests, perpetuating the problem.
-    
 
 In an environment with many clients and dynamically changing queries, the system can become vulnerable to sudden surges in demand. This vulnerability can undermine the performance benefits APQs are designed to provide, leading to potential system instability.
 
