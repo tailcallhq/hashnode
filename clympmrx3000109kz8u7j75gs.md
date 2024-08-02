@@ -16,8 +16,6 @@ If you are thinking how we could possibly cover all of the lovely intricacies as
 
 Let's break our job into puzzle pieces. Let's start by simply creating designing a brand new schema!
 
-![]( align="center")
-
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1721737179725/ab987d49-4a48-402b-8591-74a45d82b27a.png align="center")
 
 If you're new to GraphQL Schema, check out our [GraphQL Schema Tutorial](https://tailcall.run/graphql/schemas-and-types/) to get up to speed with the basics.
