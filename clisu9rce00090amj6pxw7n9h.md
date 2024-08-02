@@ -8,27 +8,18 @@ cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop
 
 ---
 
-
-![bff-architecture.png](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-architecture.png)
-
-<!-- truncate -->
-
-<head>
-<link rel="canonical" href="https://tailcall.hashnode.dev/no-one-talks-about-api-orchestration"/>
-<title>No one talks about API Orchestration</title>
-</head>
-
 Being in the industry for many years, building and consuming microservices, I have realized that there is one problem that no one really talks about when it comes to microservices ie. API Orchestration. As engineers, we love our microservices, small independent components that are responsible for doing just one thing. The promise that was sold when I was a kid was you can build these small independent services and compose them together to build an app, very fast and reliably. It took me years to realize that the necessary tooling for "composing" just doesn't exist! There are tools for distributed tracing, observability, caching, discovery, etc. But to compose services to build a product is completely offloaded to front-end engineers! There were two things that were happening in the tech ecosystem:
 
 1. **Rich User Interfaces:** Responsive websites that worked on desktop and mobile are dead. To build a successful B2C business, you need to build for all three platforms viz. Android, iOS, and Web (Desktop/PWA). The applications need to look slick, rich in information, and have snappy response times. Development on multiple platforms requires a nuanced understanding of the stack and a lot of duplication of code.
-
+    
 2. **Microservice Proliferation:** Companies these days bootstrap themselves on microservices instead of monoliths. This is because the tooling to build microservices has gotten a lot better, and reusable components are available either in open-source or as a SAAS solution. This allows developers to focus on their core business logic and move fast.
+    
 
 ## Microservice
 
 Microservices architecture is a design pattern in which a large application is built as a suite of modular services, each of which runs its process and communicates with other services through well-defined interfaces, typically using a lightweight messaging protocol. This approach has several benefits over a monolithic architecture, including improved scalability, resilience, and maintainability. In a microservices architecture, each service has a specific role and is independently deployable, so developers can work on different services in parallel and deploy them independently of each other. This can make the development process more agile and allow for faster deployment of new features.
 
-![Microservices Architecture](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/microservices-architecture.png)
+![Microservices Architecture](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/microservices-architecture.png align="left")
 
 An API gateway is a server that acts as a single point of entry for certain types of requests. It can receive requests from the client, route them to the appropriate backend service, and then return the response from the backend service to the client. An API gateway can also perform tasks such as authentication, rate limiting, and caching. This makes it a useful component in a microservices architecture, where each service has its API and the API gateway acts as the "front door" for clients to access the services.
 
@@ -52,7 +43,7 @@ A BFF layer can help to solve the challenges of API composition by providing a s
 
 The BFF can take advantage of a powerful CPU and access to a fast network to improve the performance and reliability of the composed API. It can also provide added flexibility and control over the composition process. This can make it a useful tool for developers who want to create new APIs by combining the functionality of multiple underlying APIs.
 
-![BFF Architecture](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-architecture.png)
+![BFF Architecture](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-architecture.png align="left")
 
 BFFs truly solve the problems mentioned above to a great extent, however they introduce new set of challenges viz.
 
@@ -87,10 +78,11 @@ The Backends for Frontends (BFF) pattern is designed to create a tailor-made bac
 However, in practice, this architecture sometimes creates friction within the organization, particularly when BFFs are developed and maintained by the backend team. Here are a few reasons why:
 
 1. **Communication and Responsiveness:** As the backend team is typically in charge of the BFF, front-end teams often have to wait for them to make necessary changes. This slows down the development process, especially when backlogs are high or priorities differ.
-
+    
 2. **Different Skillsets:** Backend and frontend developers often specialize in different programming languages and paradigms. If the backend team is in charge of the BFF, they might not be as comfortable or efficient at dealing with issues that are more closely related to the frontend.
-
+    
 3. **Lack of Ownership:** Frontend teams often feel that they lack ownership and control over the part of the system that directly impacts their work. This leads to decreased motivation and productivity.
+    
 
 One potential solution to these issues is to shift the ownership of the BFFs to the front-end teams. Since these teams are the primary consumers of the BFFs, they could be better placed to design, implement, and maintain them. This would not only empower the front-end teams but also free up backend teams to focus on their core responsibilities.
 
