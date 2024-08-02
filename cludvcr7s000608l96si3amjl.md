@@ -11,17 +11,25 @@ ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1711793374994/581c5
 
 ---
 
+
+![Cover Image for GraphQL vs REST vs gRPC - an unfair comparison](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/gql-vs-rest-vs-grpc-cover.png)
+
+<!-- truncate -->
+
+<head>
+<link rel="canonical" href="https://tailcall.hashnode.dev/graphql-vs-rest-vs-grpc"/>
+<title>GraphQL vs REST vs gRPC - an unfair comparison</title>
+</head>
+
 Since its inception, GraphQL has steadily gained popularity, often finding itself at the center of comparisons with other data query and manipulation languages such as REST and gRPC. The internet is replete with articles debating the merits and demerits of each, with some even questioning the viability of GraphQL. However, this discourse misses a crucial point: the unique strengths of GraphQL. This article aims to illuminate the distinct advantages GraphQL offers, particularly in addressing a common but complex challenge known as impedance mismatch.
 
 Impedance mismatch refers to the discordance between the capabilities of an existing API and the ideal features required for a specific use case. From the perspective of a platform engineer, the goal is to develop APIs that cater to a broad range of needs. Yet, crafting a unique API for every conceivable requirement is neither practical nor efficient. Consequently, engineers often end up creating generalized APIs. However, as a consumer, you might find these APIs lacking in some respects while being superfluous in others. Furthermore, as your needs evolve, so does your notion of the ideal API, exacerbating this mismatch. Herein lies the brilliance of GraphQL: it offers a framework for structuring data exposure and queries that significantly mitigates this issue.
 
 The GraphQL specification introduces the concept of viewing data as a graph composed of nodes, which represent domain entities for a business, interconnected by relationships that define their interactions. For instance, in the development of a social network, a user entity might have the ability to create a post, which in turn could receive comments, illustrating the interconnected nature of data entities.
-
-![Image Demonstrating a graph of entities](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-graph.png align="left")
+![Image Demonstrating a graph of entities](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-graph.png)
 
 With the data conceptualized as a graph, GraphQL advocates for a method of querying that allows for precise data retrieval. This selective querying capability enables developers to request exactly the data they need, distinguishing GraphQL from REST and gRPC which aren't truly a "queryable". The precision of GraphQL extends to the granularity of specifying individual fields within entities, facilitating extremely efficient and targeted queries.
-
-![Image Demonstrating a relations between entities](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-relation.png align="left")
+![Image Demonstrating a relations between entities](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/entity-relation.png)
 
 Notably, the GraphQL specification does not prescribe any specific data storage methodologies but focuses on the manner in which data is queried, hence the designation "Graph Query Language." This approach allows for queries tailored to specific requirements, such as obtaining posts by the current user along with comments on those posts. By enabling precise data queries, GraphQL helps in avoiding the inefficiencies associated with over-fetching or under-fetching data, thereby enhancing overall system performance.
 
