@@ -5,15 +5,12 @@ seoDescription: "Learn how attackers exploit GraphQL introspection and the battl
 datePublished: Thu Jul 11 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: clympbnmr000g09jv90438cz5
 slug: graphql-introspection-security
+canonical: https://tailcall.run/blog/graphql-introspection-security/
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1721030700111/985d4470-8806-44d0-9717-e699abbd1f5a.png
 
 ---
 
-
-![GraphQL Introspection Security Issues](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/introspection-issues.png)
 GraphQL has taken the API world by storm, offering developers a flexible and powerful way to interact with backend systems. But with great power comes great responsibility—especially when it comes to security.
-
-<!-- truncate -->
 
 Let's dive into one of GraphQL's most fascinating features: introspection. It's a double-edged sword that can be both a developer's best friend and a security expert's nightmare.
 
@@ -136,12 +133,15 @@ Monitoring and logging introspection queries can provide valuable insights into 
 A WAF can be particularly effective for GraphQL APIs because it can be configured to understand GraphQL-specific threats. For instance, you can set up rules to:
 
 1. Limit query depth: Prevent deeply nested queries that could overload your server.
+    
 2. Restrict field counts: Avoid overly broad queries that request too many fields at once.
+    
 3. Block known malicious patterns: Such as attempts to inject malicious code into queries.
+    
 
 For example, a WAF rule might look like this:
 
-```
+```plaintext
 SecRule ARGS_POST:query "@contains __schema" \
     "id:1000,\
     phase:2,\
