@@ -12,7 +12,6 @@ ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1695964719004/d92bc
 ---
 
 
-![A Photo from GraphQL Conf 2023](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/graphql-conf-2023.png)
 GraphQLConf 2023 wasn't just another tech conference; it was a groundbreaking event hosted by the GraphQL Foundation. Bursting with riveting workshops, enlightening talks, and interactive sponsor booths, this conference was a deep dive into the ever-evolving world of GraphQL.
 
 <!-- truncate -->
