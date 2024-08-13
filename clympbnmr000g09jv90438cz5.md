@@ -5,12 +5,11 @@ seoDescription: "Learn how attackers exploit GraphQL introspection and the battl
 datePublished: Thu Jul 11 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: clympbnmr000g09jv90438cz5
 slug: graphql-introspection-security
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1721030700111/985d4470-8806-44d0-9717-e699abbd1f5a.png
+cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static//images/blog/introspection-issues.png
 
 ---
 
 
-![GraphQL Introspection Security Issues](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/introspection-issues.png)
 GraphQL has taken the API world by storm, offering developers a flexible and powerful way to interact with backend systems. But with great power comes great responsibility—especially when it comes to security.
 
 <!-- truncate -->
