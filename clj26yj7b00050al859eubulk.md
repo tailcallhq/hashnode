@@ -11,7 +11,6 @@ ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1687138451126/71c2f
 ---
 
 
-![Cover Image for Unraveling the Challenges of BFF Federation](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-cover.png)
 In our [previous](https://blog.tailcall.run/no-one-talks-about-api-orchestration) blog post, we discussed the challenges of API Orchestration and its often overlooked role in a microservices architecture. We explored how, while it serves as an abstraction for frontend apps and websites, this abstraction's performance is very sensitive to network latency and device performance thus directly impacting end-user experience. One proposed solution was to create a Backend for Frontend (BFF) layer, essentially moving the frontend abstraction to powerful servers within your VPC. Although this approach effectively addresses the user experience problem and simplifies the work of front-end engineers, it introduces a new set of challenges for the backend, leading to difficulties in scaling the monolithic solution. Here's what the BFF architecture looked like:
 
 <!-- truncate -->
