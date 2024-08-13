@@ -9,8 +9,6 @@ cover: https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop
 ---
 
 
-![bff-architecture.png](https://raw.githubusercontent.com/tailcallhq/tailcallhq.github.io/develop/static/images/blog/bff-architecture.png)
-
 <!-- truncate -->
 
 <head>
