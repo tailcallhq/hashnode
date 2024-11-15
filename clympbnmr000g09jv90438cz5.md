@@ -78,7 +78,7 @@ Now, let's switch gears and become the defenders of our GraphQL realm. Here are 
 
 Disabling introspection in production is crucial because it significantly reduces the information available to potential attackers. Without introspection, they can't easily map out your API's structure or discover hidden fields and types. This forces attackers to rely on guesswork or prior knowledge, making their job much more difficult. However, it's important to note that this is not a silver bullet—determined attackers may still attempt to reverse-engineer your API through trial and error.
 
-In many GraphQL implementations, disabling introspection is straightforward. For example, in [Tailcall](https://tailcall.run/docs/tailcall-dsl-graphql-custom-directives/#introspection), you can disable introspection by setting the `introspection` option to `false`:
+In many GraphQL implementations, disabling introspection is straightforward. For example, in [Tailcall](https://tailcall.run/docs/server-directive/#introspection), you can disable introspection by setting the `introspection` option to `false`:
 
 ```graphql
 schema
